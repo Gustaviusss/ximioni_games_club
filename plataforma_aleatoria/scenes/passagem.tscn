@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/img/0fc84f0c3d4c39f.png" type="Texture" id=1]
+[ext_resource path="res://scripts/passagem.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 25.5515, 53.743 )
+
+[node name="passagem" type="Area2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.8909, -10.2453 )
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
+z_index = -1
+texture = ExtResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_passagem_body_entered"]
