@@ -19,10 +19,16 @@ tile_data = PoolIntArray( 262162, 0, 0, 262163, 1, 0, 262164, 1, 0, 262165, 1, 0
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 3 )]
 
-[node name="enemy" parent="." instance=ExtResource( 4 )]
-position = Vector2( 357.492, 128.924 )
+[node name="passagem" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2169.48, 210.354 )
+cenas = "res://scenes/Fase_2.tscn"
+
+[node name="enemies" type="Node" parent="."]
+
+[node name="enemy" parent="enemies" instance=ExtResource( 4 )]
+position = Vector2( 362.736, 142.409 )
 walksize = 170
 
-[node name="passagem" parent="." instance=ExtResource( 5 )]
-position = Vector2( 666.831, 81.9874 )
-cenas = "res://scenes/Fase_2.tscn"
+[node name="enemy2" parent="enemies" instance=ExtResource( 4 )]
+position = Vector2( 650.411, 364.158 )
+walksize = 128

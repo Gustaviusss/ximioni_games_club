@@ -8,19 +8,20 @@ var velocidade = 1
 export(int) var walksize
 
 func _ready():
-	$animacao2.play("run")
 	posicao_inicial = $".".position.x
 	posicao_final = posicao_inicial + walksize
 
 func _process(delta):
 	if(posicao_inicial <= posicao_final and flip):
+		$AnimationPlayer.play("run")
 		$".".position.x += velocidade
-		$animacao2.flip_h = false
+		$Sprite.flip_h = false
 		if($".".position.x >= posicao_final):
 			flip = false
 	
 	if($".".position.x >= posicao_inicial and !flip):
+		$AnimationPlayer.play("runleft")
 		$".".position.x -= velocidade
-		$animacao2.flip_h = true
+		$Sprite.flip_h = true
 		if($".".position.x <= posicao_inicial):
 			flip = true
